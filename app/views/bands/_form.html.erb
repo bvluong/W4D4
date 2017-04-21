@@ -7,6 +7,9 @@
 
   <%= auth_token %>
   <label for="name">Name</label>
-  <input id="name" type="text" name="band[name]" value="<%= band.name %>">
+  <input id="name"
+    type="text"
+    name="band[name]"
+    value="<%= band.name if action == :edit %>">
   <input type="submit">
 </form>

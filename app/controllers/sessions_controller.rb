@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
 
     if @user
       log_in_user!(@user)
-      redirect_to user_url(@user)
+      redirect_to bands_url
     else
-      flash[:errors] = "Invalid credentials"
+      flash[:errors] = ["Invalid credentials"]
       redirect_to new_sessions_url
     end
   end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     if logged_in?
       log_out_user!
     end
-    render :new
+    redirect_to new_sessions_url
   end
 
 end
